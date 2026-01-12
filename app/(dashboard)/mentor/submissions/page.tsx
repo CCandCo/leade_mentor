@@ -1,5 +1,5 @@
 const Page = () => {
-  return <h1>Welcome to Next.js</h1>;
+  return <div>Page - Submissions</div>;
 };
 
 export default Page;
