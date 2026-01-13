@@ -34,17 +34,17 @@ const Sidebar = ({
          } transition-all duration-300`}
       >
         {/* header */}
-        <div className="h-14 md:h-16 border-b flex items-center">
-          <Link href="/dashboard" className={`p-2  flex items-center`}>
+        <div className="h-14 md:h-16 border-b flex items-center pl-4">
+          <Link href="/dashboard" className={`p-2 flex gap-2`}>
             <Image
               src="/logo.png"
               alt="LeaDe Logo"
-              width={70}
+              width={10}
               height={0}
-              className="min-w-17.5 h-auto object-contain"
+              className="w-8"
             />
             <h1
-              className={`text-md font-semibold -ml-4 ${
+              className={`text-md font-semibold ${
                 collapsed
                   ? "opacity-0 pointer-events-auto"
                   : "opacity-100 pointer-events-auto"

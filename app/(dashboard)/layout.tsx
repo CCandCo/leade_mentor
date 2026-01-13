@@ -37,7 +37,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <div className="transition-all duration-200 w-screen flex-1 flex flex-col">
         <Header toggleSidebar={toggleMobileSidebar} />
         <main
-          className="animate-fade-in-up p-4 md:p-6 pb-30 md:pb-0 overflow-y-auto scrollbar-none"
+          className="animate-fade-in-up p-4 md:p-6 pb-30 md:pb-10 overflow-y-auto scrollbar-none"
           key={pathname}
         >
           {children}

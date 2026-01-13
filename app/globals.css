@@ -26,6 +26,7 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-warning: var(--warning);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -68,6 +69,7 @@
   --input: oklch(0.922 0 0);
   --ring: hsl(60, 85%, 66%);
   --success: hsl(142, 76%, 36%);
+  --warning: hsl(38, 92%, 50%);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -148,10 +150,55 @@
   }
 }
 
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 300ms ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 300ms ease-out forwards;
+  animation-delay: 300ms;
+}
+
 .animate-fade-in-down {
   animation: fade-in-down 300ms ease-out forwards;
 }
 
 .animate-fade-in-up {
   animation: fade-in-up 300ms ease-out forwards;
+}
+
+.scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin; /* Firefox */
+  background-color: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px; /* Chrome, Safari, Opera */
+  background-color: transparent;
 }

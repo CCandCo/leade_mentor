@@ -1,8 +1,12 @@
-import Card from "@/components/ui/card";
+import RecentActivities from "@/features/dashboard/components/RecentActivities";
 import StatsCard from "@/features/dashboard/components/StatsCard";
-import { stats } from "@/features/dashboard/db";
-import { FileCheck } from "lucide-react";
-import React from "react";
+import SubmisssionsCard from "@/features/dashboard/components/SubmisssionsCard";
+import {
+  RECENT_ACTIVITIES,
+  stats,
+  SUBMISSION_TABS,
+  submissions,
+} from "@/features/dashboard/db";
 
 const Page = () => {
   return (
@@ -22,17 +26,12 @@ const Page = () => {
       </section>
 
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* submissions */}
-        <Card className="lg:col-span-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <FileCheck className="size-5 text-primary" />
-              <h2 className="font-semibold">Submissions</h2>
-            </div>
-
-            
-          </div>
-        </Card>
+        {/* submissions card */}
+        <SubmisssionsCard
+          submissionTabs={SUBMISSION_TABS}
+          submissions={submissions}
+        />
+        <RecentActivities recentActivities={RECENT_ACTIVITIES} />
       </section>
     </div>
   );
