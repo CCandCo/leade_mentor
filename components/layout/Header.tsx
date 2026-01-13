@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { USER_NAME, USER_ROLE } from "@/features/dashboard/db";
+import SearchInput from "../common/SearchInput";
 
 interface HeaderProps {
   toggleSidebar?: () => void;
@@ -41,14 +42,7 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
       {/* right side- */}
       <div className="flex items-center gap-2 md:gap-3 shrink-0">
         {/* search */}
-        <div className="relative hidden lg:block">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Search..."
-            className="w-48 xl:w-64 h-9 pl-9 pr-4 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
-          />
-        </div>
+        <SearchInput />
 
         <Button variant="ghost" size="icon-sm" className="lg:hidden">
           <Search className="w-5 h-5" />
