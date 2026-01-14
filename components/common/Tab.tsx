@@ -48,15 +48,17 @@ const Tab = ({ tabs, className, handleTabChange }: TabProps) => {
             }`}
           >
             {label}
-            <span
-              className={`text-xs px-1.5 py-0.5 rounded-full ${
-                isActive
-                  ? "bg-primary/10 text-primary"
-                  : "bg-muted text-muted-foreground"
-              }`}
-            >
-              {count}
-            </span>
+            {count && (
+              <span
+                className={`text-xs px-1.5 py-0.5 rounded-full ${
+                  isActive
+                    ? "bg-primary/10 text-primary"
+                    : "bg-muted text-muted-foreground"
+                }`}
+              >
+                {count}
+              </span>
+            )}
           </button>
         );
       })}

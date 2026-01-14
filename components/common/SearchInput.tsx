@@ -2,7 +2,12 @@ import { useDebounce } from "@/hooks/use-debounce";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const SearchInput = () => {
+interface SearchInputProps {
+  placeholder?: string;
+  // searchAPIRoute?: string;
+}
+
+const SearchInput = ({ placeholder }: SearchInputProps) => {
   const [query, setQuery] = useState("");
 
   const debouncedQuery = useDebounce(query, 500);
@@ -22,7 +27,7 @@ const SearchInput = () => {
         onChange={(e) => {
           setQuery(e.target.value);
         }}
-        placeholder="Search..."
+        placeholder={placeholder || "Search..."}
         className="w-48 xl:w-64 h-9 pl-9 pr-4 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
       />
     </div>
