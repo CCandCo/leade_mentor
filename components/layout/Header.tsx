@@ -42,7 +42,7 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
       {/* right side- */}
       <div className="flex items-center gap-2 md:gap-3 shrink-0">
         {/* search */}
-        <SearchInput />
+        <SearchInput className="hidden lg:block" />
 
         <Button variant="ghost" size="icon-sm" className="lg:hidden">
           <Search className="w-5 h-5" />

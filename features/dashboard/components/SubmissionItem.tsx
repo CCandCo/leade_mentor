@@ -10,6 +10,7 @@ interface SubmissionsItemProps {
   submittedAt: string;
   status: "pending" | "reviewed";
   activeTab?: string;
+  pagination?: number;
 }
 const SubmissionsItem = ({
   assignmentTitle,
@@ -18,6 +19,7 @@ const SubmissionsItem = ({
   submittedAt,
   delay,
   activeTab,
+  pagination,
 }: SubmissionsItemProps) => {
   const studentInitials = getInitials(studentName);
 
@@ -35,7 +37,7 @@ const SubmissionsItem = ({
     <div
       className="animate-fade-in-left opacity-0 group flex items-center gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-border/80 hover:shadow-md hover:translate-x-1 transition-all duration-200 cursor-pointer"
       style={{ animationDelay: `${delay}ms` }}
-      key={activeTab}
+      key={activeTab || pagination}
     >
       {/* avatar */}
       <div className="w-10 h-10 rounded-full bg-linear-to-br from-secondary to-muted hidden md:flex items-center justify-center shrink-0">

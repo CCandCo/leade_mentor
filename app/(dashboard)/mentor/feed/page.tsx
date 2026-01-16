@@ -1,7 +1,5 @@
-import Tab from "@/components/common/Tab";
 import { Button } from "@/components/ui/button";
 import Card from "@/components/ui/card";
-import { FEEDS_TABS } from "@/features/dashboard/consts";
 import { MOCK_POSTS, USER_NAME } from "@/features/dashboard/db";
 import PostsSection from "@/features/feeds/components/PostsSection";
 import { getInitials } from "@/lib/utils";

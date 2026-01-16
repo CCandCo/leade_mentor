@@ -163,18 +163,22 @@ const Sidebar = ({
 
           {/* nav */}
           <nav className="flex-1 px-4 py-6">
-            {dashboardNavigation.map(({ label, href, icon: Icon }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`flex items-center gap-3 px-4 py-2 rounded-md text-foreground hover:bg-gray-100/10 mb-2 hover:translate-x-0.5 active:scale-90 transition-all duration-300  ${
-                  pathname === href ? "bg-gray-100/10 text-yellow-300" : ""
-                }`}
-              >
-                <Icon />
-                <span>{label}</span>
-              </Link>
-            ))}
+            {dashboardNavigation.map(({ label, href, icon: Icon, role }) => {
+              const isVisible = role === USER_ROLE;
+              if (isVisible)
+                return (
+                  <Link
+                    key={href}
+                    href={href}
+                    className={`flex items-center gap-3 px-4 py-2 rounded-md text-foreground hover:bg-gray-100/10 mb-2 hover:translate-x-0.5 active:scale-90 transition-all duration-300  ${
+                      pathname === href ? "bg-gray-100/10 text-yellow-300" : ""
+                    }`}
+                  >
+                    <Icon />
+                    <span>{label}</span>
+                  </Link>
+                );
+            })}
           </nav>
 
           {/* footer */}

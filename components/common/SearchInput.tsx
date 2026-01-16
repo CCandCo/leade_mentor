@@ -1,13 +1,15 @@
+"use client";
 import { useDebounce } from "@/hooks/use-debounce";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface SearchInputProps {
   placeholder?: string;
+  className?: string;
   // searchAPIRoute?: string;
 }
 
-const SearchInput = ({ placeholder }: SearchInputProps) => {
+const SearchInput = ({ placeholder, className }: SearchInputProps) => {
   const [query, setQuery] = useState("");
 
   const debouncedQuery = useDebounce(query, 500);
@@ -19,7 +21,7 @@ const SearchInput = ({ placeholder }: SearchInputProps) => {
   }, [debouncedQuery]);
 
   return (
-    <div className="relative hidden lg:block">
+    <div className={`relative ${className}`}>
       <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
       <input
         type="text"

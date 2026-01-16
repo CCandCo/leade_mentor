@@ -1,5 +1,11 @@
 "use client";
-import { FileCheck, Star, TrendingUp, Users, type LucideIcon } from "lucide-react";
+import {
+  FileCheck,
+  Star,
+  TrendingUp,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 
 interface StatsCardProps {
   title: string;
@@ -36,7 +42,7 @@ const StatsCard = ({
     reviews: FileCheck,
     rating: Star,
     engagement: TrendingUp,
-  }
+  };
 
   const Icon = iconMap[icon];
 

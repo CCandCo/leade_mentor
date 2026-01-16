@@ -1,3 +1,4 @@
+"use client";
 import { getInitials } from "@/lib/utils";
 import { Post } from "../types";
 import { Button } from "@/components/ui/button";
