@@ -12,7 +12,8 @@ interface HeaderProps {
 }
 const Header = ({ toggleSidebar }: HeaderProps) => {
   const pathname = usePathname();
-  const { title, subtitle } = headerConfig(pathname);
+  const slug = pathname.split("/")[2];
+  const { title, subtitle } = headerConfig(slug);
 
   const [notificationsOpen, setNotificationsOpen] = useState(false);
 

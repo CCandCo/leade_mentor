@@ -6,46 +6,46 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function headerConfig(path: string) {
+export function headerConfig(slug: string) {
   const firstname = USER_NAME.split(" ")[0];
 
-  switch (path) {
-    case "/mentor/dashboard":
-    case "/admin/dashboard":
+  switch (slug) {
+    case "dashboard":
+    case "dashboard":
       return { title: "Dashboard", subtitle: `Welcome back, ${firstname}` };
-    case "/mentor/feed":
+    case "feed":
       return { title: "Feed", subtitle: "Stay connected with your community" };
-    case "/mentor/submissions":
+    case "submissions":
       return {
         title: "Submissions",
         subtitle: "Review and provide feedback on mentee work",
       };
-    case "/mentor/mentees":
+    case "mentees":
       return {
         title: "Mentees",
         subtitle: "Manage and track your mentee progress",
       };
-    case "/mentor/announcements":
+    case "announcements":
       return {
         title: "Announcements",
         subtitle: "Share updates with your mentees",
       };
-    case "/mentor/events":
+    case "events":
       return {
         title: "Events",
         subtitle: "Schedule and manage mentoring sessions",
       };
-    case "/mentor/profile":
+    case "profile":
       return { title: "Profile", subtitle: "Manage your profile settings" };
-    case "/mentor/settings":
-    case "/admin/settings":
+    case "settings":
+    case "settings":
       return { title: "Settings", subtitle: "Configure your preferences" };
-    case "/admin/learning-paths":
+    case "learning-paths":
       return {
         title: "Learning Paths",
         subtitle: "Create and manage learning paths",
       };
-    case "/admin/mentor-requests":
+    case "mentor-requests":
       return {
         title: "Mentor Requests",
         subtitle: "Review and approve mentor applications",
