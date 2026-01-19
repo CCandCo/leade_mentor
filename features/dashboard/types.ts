@@ -7,7 +7,9 @@ export interface Tab {
 export interface Submission {
   id: string;
   studentName: string;
+  lesson?: string;
   assignmentTitle: string;
+  description?: string;
   submittedAt: string;
   status: "pending" | "reviewed";
 }

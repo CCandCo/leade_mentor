@@ -41,6 +41,9 @@ export const submissions: Submission[] = [
     studentName: "Sarah Chen",
     submittedAt: "2 hours ago",
     status: "pending" as const,
+    lesson: "UX Design",
+    description:
+      "Complete brand redesign including logo, color palette, and guidelines Low-fidelity wireframes for a fitness tracking mobile application",
   },
   {
     id: "2",
@@ -48,6 +51,9 @@ export const submissions: Submission[] = [
     studentName: "Alex Rivera",
     submittedAt: "5 hours ago",
     status: "pending" as const,
+    lesson: "UI Design",
+    description:
+      "Low-fidelity wireframes for a fitness tracking mobile application",
   },
   {
     id: "3",
@@ -55,6 +61,9 @@ export const submissions: Submission[] = [
     studentName: "Maya Johnson",
     submittedAt: "1 day ago",
     status: "reviewed" as const,
+    lesson: "Web Design",
+    description:
+      "High-converting landing page design for an online fashion store",
   },
   {
     id: "4",
@@ -62,6 +71,9 @@ export const submissions: Submission[] = [
     studentName: "James Wilson",
     submittedAt: "2 days ago",
     status: "pending" as const,
+    lesson: "UI Design",
+    description:
+      "Comprehensive dashboard components with dark and light themes",
   },
   {
     id: "5",
@@ -69,6 +81,9 @@ export const submissions: Submission[] = [
     studentName: "Lina Patel",
     submittedAt: "3 days ago",
     status: "reviewed" as const,
+    lesson: "UI Design",
+    description:
+      "Complete brand redesign including logo, color palette, and guidelines Low-fidelity wireframes for a fitness tracking mobile application",
   },
   {
     id: "6",
@@ -76,6 +91,9 @@ export const submissions: Submission[] = [
     studentName: "Tom Nguyen",
     submittedAt: "4 days ago",
     status: "reviewed" as const,
+    lesson: "UX Design",
+    description:
+      "Low-fidelity wireframes for a fitness tracking mobile application",
   },
   {
     id: "7",
@@ -83,6 +101,9 @@ export const submissions: Submission[] = [
     studentName: "Emily Davis",
     submittedAt: "5 days ago",
     status: "pending" as const,
+    lesson: "UX Design",
+    description:
+      "High-converting landing page design for an online fashion store",
   },
   {
     id: "8",
@@ -90,6 +111,9 @@ export const submissions: Submission[] = [
     studentName: "Michael Brown",
     submittedAt: "1 week ago",
     status: "pending" as const,
+    lesson: "UI Design",
+    description:
+      "Comprehensive dashboard components with dark and light themes",
   },
 ];
 

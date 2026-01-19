@@ -1,10 +1,10 @@
 "use client";
 import Tab from "@/components/common/Tab";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Submission } from "@/features/dashboard/types";
-import SubmissionsItem from "@/features/dashboard/components/SubmissionItem";
 import SearchInput from "@/components/common/SearchInput";
 import Pagination from "@/components/common/Pagination";
+import SubmissionCard from "@/features/submissions/components/SubmissionCard";
 
 interface SubmisssionsContainerProps {
   submissions: Submission[];
@@ -33,10 +33,20 @@ const SubmissionsClient = ({
     setActiveTab(tabId);
   };
 
-  const filteredSubmissions =
-    activeTab === "all"
-      ? submissions
-      : submissions.filter((submission) => submission.status === activeTab);
+  const filterSubmissions = (submissions: Submission[], activeTab: string) => {
+    const filteredSubmissions =
+      activeTab === "all"
+        ? submissions
+        : submissions.filter((submission) => submission.status === activeTab);
+
+    return filteredSubmissions;
+  };
+
+  const visibleSubmissions = useMemo(
+    () => filterSubmissions(submissions, activeTab),
+    [activeTab, submissions],
+  );
+
   return (
     <div className="max-w-6xl flex flex-col gap-5 mx-auto space-y-6">
       {/* submissions card header */}
@@ -53,16 +63,13 @@ const SubmissionsClient = ({
       </div>
       {/* submissions card body */}
       <div className="space-y-3">
-        {filteredSubmissions
+        {visibleSubmissions
           .slice(startIndex, endIndex)
           .map((submission, index) => (
-            <SubmissionsItem
+            <SubmissionCard
               key={submission.id}
+              submission={submission}
               delay={index * 100}
-              assignmentTitle={submission.assignmentTitle}
-              studentName={submission.studentName}
-              submittedAt={submission.submittedAt}
-              status={submission.status}
               activeTab={activeTab}
               pagination={currentPage}
             />
